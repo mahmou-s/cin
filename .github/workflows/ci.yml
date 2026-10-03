@@ -18,6 +18,7 @@ jobs:
           sed -i "s/^APP_ENVIRONMENT=.*/APP_ENVIRONMENT=development/" .env
           echo "API_PORT=$(grep -E '^API_PORT=' .env | cut -d= -f2)" >> "$GITHUB_ENV"
           echo "WEB_PORT=$(grep -E '^WEB_PORT=' .env | cut -d= -f2)" >> "$GITHUB_ENV"
+          echo "COMPOSE_FILE=docker-compose.yml:docker-compose.ci.yml" >> "$GITHUB_ENV"
 
       - name: Build and start the full stack (docker compose)
         run: docker compose up -d --build
@@ -67,6 +68,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r apps/api/requirements.txt
           if [ -f apps/api/requirements-dev.txt ]; then pip install -r apps/api/requirements-dev.txt; fi
+          export DATABASE_URL="postgresql+asyncpg://$(grep ^POSTGRES_USER= .env | cut -d= -f2):$(grep ^POSTGRES_PASSWORD= .env | cut -d= -f2)@127.0.0.1:5432/$(grep ^POSTGRES_DB= .env | cut -d= -f2)"
           pytest -q
 
       - name: Logs on failure
