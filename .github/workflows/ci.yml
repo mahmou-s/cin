@@ -15,6 +15,7 @@ jobs:
       - name: Prepare environment from .env.example
         run: |
           cp .env.example .env
+          sed -i "s/^APP_ENVIRONMENT=.*/APP_ENVIRONMENT=development/" .env
           echo "API_PORT=$(grep -E '^API_PORT=' .env | cut -d= -f2)" >> "$GITHUB_ENV"
           echo "WEB_PORT=$(grep -E '^WEB_PORT=' .env | cut -d= -f2)" >> "$GITHUB_ENV"
 
