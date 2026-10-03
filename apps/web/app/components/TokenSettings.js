@@ -1,0 +1,3 @@
+'use client';
+import {useEffect,useState} from 'react';
+export default function TokenSettings(){const [value,setValue]=useState('');const [saved,setSaved]=useState(false);useEffect(()=>setValue(localStorage.getItem('cin_api_token')||''),[]);return <section className="card" dir="rtl"><h3>إعدادات الوصول</h3><label>رمز CIN API<input type="password" value={value} onChange={e=>{setValue(e.target.value);setSaved(false)}} placeholder="Bearer API key"/></label><button type="button" onClick={()=>{localStorage.setItem('cin_api_token',value.trim());setSaved(true)}}>حفظ الرمز</button>{saved&&<small>تم حفظ الرمز على هذا المتصفح.</small>}</section>}

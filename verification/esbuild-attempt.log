@@ -1,0 +1,4 @@
+esbuild verification: NOT COMPLETED.
+Reason: esbuild is not installed in the environment and registry.npmjs.org is not resolvable.
+Attempt: `npm view esbuild version` timed out; direct registry access failed with DNS resolution error.
+No substitute parser was counted as an esbuild pass.

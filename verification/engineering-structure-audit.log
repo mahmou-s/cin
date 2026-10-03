@@ -1,0 +1,8 @@
+CIN Engineering Structure Audit
+root=/mnt/data/cin_audit
+files=301
+python=96
+js_ts=20
+migrations=17
+migration_head=apps/api/migrations/versions/0017_wave6_future_intelligence.py:revision='0017_wave6_future_intelligence'
+compose_services=15

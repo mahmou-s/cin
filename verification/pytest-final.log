@@ -1,0 +1,11 @@
+...........................................sssss................s....... [ 97%]
+..                                                                       [100%]
+=========================== short test summary info ============================
+SKIPPED [1] tests/test_integration_behavior.py:7: could not import 'fakeredis': No module named 'fakeredis'
+SKIPPED [1] tests/test_proactive_outreach.py:31: PostgreSQL unavailable: ModuleNotFoundError
+SKIPPED [1] tests/test_proactive_outreach.py:49: PostgreSQL unavailable: ModuleNotFoundError
+SKIPPED [1] tests/test_proactive_outreach.py:68: PostgreSQL unavailable: ModuleNotFoundError
+SKIPPED [1] tests/test_proactive_outreach.py:87: PostgreSQL unavailable: ModuleNotFoundError
+SKIPPED [1] tests/test_proactive_outreach.py:115: PostgreSQL unavailable: ModuleNotFoundError
+SKIPPED [1] tests/test_review_validation.py:46: could not import 'asyncpg': No module named 'asyncpg'
+68 passed, 7 skipped in 1.28s
